@@ -30,7 +30,7 @@ exports.regexAnswers = {
   },
 
   isUSD : function(str) {
-    var testPattern = /^\$[0-9][0-9\,]*(\.\d{1,2})?$|^\$?[\.]([\d][\d]?)$/;
+    var testPattern = /^\$[0-9]{1,3}(?:,?[0-9]{3})*(\.[0-9]{2})?$/;
     return testPattern.test(str);
   }
 };
