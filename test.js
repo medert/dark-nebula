@@ -4,14 +4,18 @@ array = [1, 2, 3, 4, 5];
 
 function containsNumber(str) {
 
-var testPattern = /ddd-ddd-dddd/;
+var testPattern = /^\$[0-9][0-9\,]*(\.\d{1,2})?$|^\$?[\.]([\d][\d]?)$/;
 return testPattern.test(str);
 
 }
 
 
 
-console.log(containsNumber('800-555-1212'));
-console.log(containsNumber('451-933-7899'));
-console.log(containsNumber('1800-555-1212'));
-console.log(containsNumber('abc-def-hijk'));
+console.log(containsNumber('$132.03'));
+console.log(containsNumber('$32.03'));
+console.log(containsNumber('$2.03'));
+console.log(containsNumber('34,344.34'));
+console.log(containsNumber('$,344.34'));
+console.log(containsNumber('$34,344_34'));
+console.log(containsNumber('$3,432,12.12'));
+console.log(containsNumber('$3,432,1,034.12'));

@@ -25,11 +25,12 @@ exports.regexAnswers = {
   },
 
   matchesPattern : function(str) {
-    var testPattern = /[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/;
+    var testPattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     return testPattern.test(str);
   },
 
   isUSD : function(str) {
-
+    var testPattern = /^\$[0-9][0-9\,]*(\.\d{1,2})?$|^\$?[\.]([\d][\d]?)$/;
+    return testPattern.test(str);
   }
 };
